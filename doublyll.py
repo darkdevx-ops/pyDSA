@@ -51,11 +51,17 @@ class DoubleLinkedList :
       # print("Linked list is empty.")
       return
     else:
-      if(t1.next == None or t1.data == value):
-        t1 = t1.next
-        self.head = t1
+      if(t1.data == value):
+        if(t1.next == None):
+          t1 = t1.next
+          self.head = t1
+          
+        else:
+          t1 = t1.next
+          t1.prev = None
+          self.head = t1
         return
-    
+      
     while(t1.next != None):
       if(t1.data == value):
         t1.prev.next = t1.next
@@ -83,22 +89,22 @@ class DoubleLinkedList :
 
 obj1 = DoubleLinkedList()
 obj1.insertionAtBeg(10)
-obj1.insertionAtBeg(20)
-obj1.insertionAtBeg(30)
-obj1.insertionAtEnd(5)
-obj1.insertionAtEnd(15)
-obj1.insertionAtMid(25, 10)
-obj1.insertionAtMid(35, 30)
-obj1.insertionAtMid(45, 20)
+# obj1.insertionAtBeg(20)
+# obj1.insertionAtBeg(30)
+# obj1.insertionAtEnd(5)
+# obj1.insertionAtEnd(15)
+# obj1.insertionAtMid(25, 10)
+# obj1.insertionAtMid(35, 30)
+# obj1.insertionAtMid(45, 20)
 obj1.deleteNode(10)
-obj1.deleteNode(45)
-obj1.deleteNode(20)
-obj1.deleteNode(30)
-obj1.deleteNode(35)
-obj1.deleteNode(5)
-obj1.deleteNode(15)
-obj1.deleteNode(25)
-obj1.deleteNode(42)
+# obj1.deleteNode(45)
+# obj1.deleteNode(20)
+# obj1.deleteNode(30)
+# obj1.deleteNode(35)
+# obj1.deleteNode(5)
+# obj1.deleteNode(15)
+# obj1.deleteNode(25)
+# obj1.deleteNode(42)
 
 
 
